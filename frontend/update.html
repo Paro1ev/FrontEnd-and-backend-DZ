@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Обновление заявки</title>
+</head>
+<body>
+    <a href="create.html">Cоздание заявки</a>
+    <a href="orders.html">Список заявок</a>
+    <a href="update.html">Обновление заявки</a>
+    <a href="stat.html">Статистика</a>
+    <iframe name="frame" style="display: none;"></iframe>
+    <form target="frame" action="http://localhost:5097/update" method="get">
+        <input required placeholder="Номер" type="number" name="number" /><br/>              
+        <input  placeholder="Описание" type="text" name="description" /><br/>   
+        <input  placeholder="Мастер" type="text" name="master" /><br/>  
+        <input  placeholder="Комментарий" type="text" name="comment" /><br/>   
+        <label for="status">Статус</label><br/>
+        <select name="status">
+            <option></option>
+            <option>в ожидании</option>
+            <option>в работе</option>
+            <option>выполнено</option>
+        </select><br/>
+        <input type="submit" value="Обновление" />        
+    </form>
+    
+</body>
+<script>
+    if(!sessionStorage.getItem("token"))
+        window.location.href = "auth.html";
+</script>
+</html>
